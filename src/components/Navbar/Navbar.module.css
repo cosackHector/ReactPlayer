@@ -1,0 +1,34 @@
+.container {
+    padding-left: 20px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+a {
+    color: #23f9e0;
+    text-decoration: none;
+
+}
+
+.playlists {
+    background-color: aliceblue;
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+}
+
+.favorite {
+    background-color: aliceblue;
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+}
+
+.top {
+    background-color: aliceblue;
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+}

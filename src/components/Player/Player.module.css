@@ -7,8 +7,15 @@
     background-color: #4b4b4b;
     border-radius: 15px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    overflow:  scroll;
+}
+
+
+/* убрать скролл для блока */
+.container::-webkit-scrollbar {
+    width: 0;
 }

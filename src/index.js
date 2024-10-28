@@ -13,13 +13,15 @@ const renderTree = () => {
   root.render(
     <React.Fragment>
       <BrowserRouter>
-      <Provider store={store}>
-        <App playlists={store.getState().playlists}/>
-      </Provider>
+        <Provider store={store}>
+          <App playlists={store.getState().playlists}/>
+        </Provider>
       </ BrowserRouter>
     </React.Fragment>
   );
 };
+
+console.log(store.getState());
 
 renderTree(store.getState());
 store.subscribe(renderTree);

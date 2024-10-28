@@ -1,3 +1,5 @@
 .header {
+    padding-top: 200px;
+    padding-bottom: 50px;
     display: flex;
 }

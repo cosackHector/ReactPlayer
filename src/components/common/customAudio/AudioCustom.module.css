@@ -1,0 +1,211 @@
+
+/* Основные стили для аудиоплеера */
+.audioPlayer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px; /* максимальная ширина плеера */
+    margin: 20px auto; /* центрирование */
+    padding: 20px;
+    background-color: #5f5c5c; /* задний фон */
+    border-radius: 8px; /* Закругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+/* Скрываем стандартный плеер */
+audio {
+    -webkit-appearance: none; /* для Safari */
+    appearance: none; /* универсальное отключение стандартного стиля */
+    width: 100%; /* ширина плеера на 100% от родителя */
+}
+
+/* Ползунок */
+audio::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px; /* ширина ползунка */
+    height: 15px; /* высота ползунка */
+    border-radius: 50%; /* форма ползунка круглая */
+    background: #3498db; /* цвет ползунка */
+    cursor: pointer; /* курсор при наведении */
+}
+
+/* Ползунок для Firefox */
+audio::-moz-range-thumb {
+    width: 15px; /* ширина */
+    height: 15px; /* высота */
+    border-radius: 50%; /* круглый */
+    background: #3498db; /* цвет */
+    cursor: pointer; /* курсор */
+}
+
+/* Убираем стандартные границы */
+audio::-webkit-slider-runnable-track {
+    width: 100%; /* ширина трека */
+    height: 5px; /* высота */
+    background: #1d1c1c; /* цвет трека */
+    border-radius: 5px; /* Закругленные углы */
+}
+
+/* Для Firefox */
+audio::-moz-range-track {
+    /* width: 100%; ширина */
+    height: 5px; /* высота */
+    background: #e1e1e1; /* цвет */
+    border-radius: 5px; /* Закругленные углы */
+}
+
+/* Стили для состояния, когда ползунок активен */
+audio:focus {
+    outline: none; /* убираем рамку при фокусировке */
+}
+
+
+/* src/AudioPlayer.css */
+
+/* .audioPlayer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    background-color: #000000;
+}
+
+
+.trackInfo {
+    align-self: center;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.icon {
+    padding: 5px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.iconRotate {
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    transform: rotate(180deg);
+    cursor: pointer;
+} */
+
+.audioPlayer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px; /* или другая ширина на ваше усмотрение */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.icon {
+    padding-top: 25px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.iconRotate {
+    padding-bottom: 25px;
+    width: 30px;
+    height: 30px;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+.trackInfo {
+    color: #fff;
+    text-align: center;
+    overflow: hidden; /* Скрывает переполнение */
+    white-space: nowrap; /* Не разрешает перенос строк */
+    width: 200зч; /* Ширина контейнера */
+    position: relative; /* Позиционирование для анимации */
+    height: 40px; /* Высота контейнера для текста */
+}
+
+.trackTitle {
+    padding-top: 3px;
+    display: flex; /* Используем флексbox для копий текста */
+    animation: slide 15s linear infinite; /* Анимация для бегущей строки */
+}
+
+.trackTitle p {
+    margin: 0; /* Убираем отступы у текста */
+    padding: 0 20px; /* Дополнительные отступы между копиями текста */
+}
+
+/* Анимация */
+/* @keyframes slide {
+    0% {
+        transform: translateX(0%); /* Начальное положение за пределами контейнера */
+    /*}
+    50% {
+        transform: translateX(-100%); /* Конечное положение за пределами контейнера */
+   /* }
+   /* 100% {
+        transform: translateX(0%); /* Конечное положение за пределами контейнера */
+  /*}
+}*/
+
+.progressBar {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 1px;
+    background: #555;
+    border-radius: 5px;
+    outline: none;
+}
+
+.progressBar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 4px;
+    background: #ffcc00; /* Цвет ползунка */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.progressBar::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #ffcc00; /* Цвет ползунка */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.progressBar::-ms-thumb {
+    width: 12px;
+    height: 12px;
+    background: #ffcc00; /* Цвет ползунка */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.progressBar::-webkit-slider-runnable-track {
+    background: #555;
+}
+
+.progressBar::-moz-range-track {
+    background: #555;
+}
+
+.progressBar::-ms-track {
+    background: #555;
+}

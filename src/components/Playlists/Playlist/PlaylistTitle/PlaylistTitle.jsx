@@ -15,7 +15,6 @@ export const PlaylistTitle = ({title, id}) => {
     }
     return (
         <>
-            {/* <NavLink className={styles.link} to={`/player_${id}`}> */}
             <NavLink className={styles.link} to={`/player`}>
                 <p onClick={onSetCurrentPlaylist} className={styles.title}>{title}</p>
             </NavLink>

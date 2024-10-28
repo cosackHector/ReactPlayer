@@ -1,9 +1,10 @@
 import { combineReducers, createStore } from 'redux';
-import playlistsReducer from "./playlistsReducer";
-
+import { playlistReducer } from "./playlistsReducer";
+import { authReducer } from './authReducer';
 
 const reducers = combineReducers({
-    playlists: playlistsReducer,
+    playlists: playlistReducer,
+    auth: authReducer,
 });
 
 export const store = createStore(reducers);
